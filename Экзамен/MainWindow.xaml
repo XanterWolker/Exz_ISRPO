@@ -5,23 +5,55 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Экзамен"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Сотрудники" Height="450" Width="800">
     <Grid Background="#FFA40000">
-        <DataGrid x:Name="T_Emp" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="266" Margin="134,80,0,0" VerticalAlignment="Top" Width="493"  Foreground="Black" OpacityMask="#FF948787" Background="#FF96DCD6" >
-
+        <DataGrid x:Name="T_Emp" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="266" Margin="134,80,0,0" VerticalAlignment="Top" Width="493"  Foreground="Black" OpacityMask="#FF948787" Background="#FF96DCD6" SelectionChanged="T_Emp_SelectionChanged" >
             <DataGrid.Columns  >
-                <DataGridTextColumn Binding="{Binding LastName}" Header="Фамилия" Width="*" >
-
-                </DataGridTextColumn>
-                <DataGridTextColumn Binding="{Binding First_Name}" Header="Имя" Width="*" >
-
-                </DataGridTextColumn>
-                <DataGridTextColumn Binding="{Binding Middle_Name}" Header="Отчество" Width="*" >
-
-                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Last_Name}" Header="Фамилия" Width="*"/>
+                <DataGridTextColumn Binding="{Binding First_Name}" Header="Имя" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Middle_Name}" Header="Отчество" Width="*"/>
             </DataGrid.Columns>
-
         </DataGrid>
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="674,249,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Height="26" Background="#FF96DCD6"/>
+        <TextBox x:Name="tb_LastName" HorizontalAlignment="Left" Height="23" Margin="650,149,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBlock IsHitTestVisible="False" FontSize="14" Text="Фамилия" Margin="662,149,63,0" VerticalAlignment="Top" Foreground="Black">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=tb_LastName}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+        <TextBox x:Name="tb_FirstName" HorizontalAlignment="Left" Height="23" Margin="650,177,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBlock IsHitTestVisible="False" FontSize="14" Text="Имя" Margin="662,177,63,0" VerticalAlignment="Top" Foreground="Black">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=tb_FirstName}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+        <TextBox x:Name="tb_MiddleName" HorizontalAlignment="Left" Height="23" Margin="650,205,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBlock IsHitTestVisible="False" FontSize="14" Text="Отчество" Margin="662,205,63,0" VerticalAlignment="Top" Foreground="Black">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=tb_MiddleName}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
 
     </Grid>
 </Window>

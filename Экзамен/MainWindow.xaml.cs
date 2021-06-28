@@ -20,9 +20,26 @@ namespace Экзамен
     /// </summary>
     public partial class MainWindow : Window
     {
+
+
         public MainWindow()
         {
             InitializeComponent();
+            T_Emp.ItemsSource = db.Table.ToList();
+        }
+
+        Database1Entities db = new Database1Entities();
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Add_Employee add_Employee = new Add_Employee();
+            add_Employee.Insert(tb_LastName.Text, tb_FirstName.Text, tb_MiddleName.Text);
+            T_Emp.ItemsSource = db.Table.ToList();
+        }
+
+        private void T_Emp_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
