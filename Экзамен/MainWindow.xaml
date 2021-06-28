@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid Background="#FFA40000">
-        <DataGrid x:Name="T_Con_Det" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="266" Margin="134,80,0,0" VerticalAlignment="Top" Width="493"  Foreground="Black" OpacityMask="#FF948787" Background="#FF96DCD6" >
+        <DataGrid x:Name="T_Emp" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="266" Margin="134,80,0,0" VerticalAlignment="Top" Width="493"  Foreground="Black" OpacityMask="#FF948787" Background="#FF96DCD6" >
 
             <DataGrid.Columns  >
                 <DataGridTextColumn Binding="{Binding LastName}" Header="Фамилия" Width="*" >
