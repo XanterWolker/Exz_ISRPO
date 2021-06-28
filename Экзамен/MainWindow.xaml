@@ -10,7 +10,13 @@
         <DataGrid x:Name="T_Con_Det" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="266" Margin="134,80,0,0" VerticalAlignment="Top" Width="493"  Foreground="Black" OpacityMask="#FF948787" Background="#FF96DCD6" >
 
             <DataGrid.Columns  >
-                <DataGridTextColumn Binding="{Binding FIO}" Header="ФИО" Width="*" >
+                <DataGridTextColumn Binding="{Binding LastName}" Header="Фамилия" Width="*" >
+
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding First_Name}" Header="Имя" Width="*" >
+
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Middle_Name}" Header="Отчество" Width="*" >
 
                 </DataGridTextColumn>
             </DataGrid.Columns>
